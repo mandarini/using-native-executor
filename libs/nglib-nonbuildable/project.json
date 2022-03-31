@@ -46,7 +46,10 @@
         "config": {
           "configFolder": "libs/nglib-nonbuildable/.storybook"
         },
-        "projectBuildConfig": "nglib-nonbuildable:build-storybook"
+        "projectBuildConfig": "nglib-nonbuildable:build-storybook",
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "ci": {

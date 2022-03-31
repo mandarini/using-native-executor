@@ -42,8 +42,11 @@
       "options": {
         "port": 4400,
         "configDir": "libs/nativelib-buildable/.storybook",
-        "browserTarget": "nativelib-buildable:build",
-        "compodoc": false
+        "browserTarget": "nativelib-buildable:build-storybook",
+        "compodoc": false,
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "ci": {
@@ -57,8 +60,11 @@
       "options": {
         "outputDir": "dist/storybook/nativelib-buildable",
         "configDir": "libs/nativelib-buildable/.storybook",
-        "browserTarget": "nativelib-buildable:build",
-        "compodoc": false
+        "browserTarget": "nativelib-buildable:build-storybook",
+        "compodoc": false,
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "ci": {

@@ -45,7 +45,7 @@
         "config": {
           "configFolder": "libs/nglib-buildable/.storybook"
         },
-        "projectBuildConfig": "nglib-buildable"
+        "projectBuildConfig": "nglib-buildable:build-storybook"
       },
       "configurations": {
         "ci": {
@@ -62,7 +62,10 @@
         "config": {
           "configFolder": "libs/nglib-buildable/.storybook"
         },
-        "projectBuildConfig": "nglib-buildable"
+        "projectBuildConfig": "nglib-buildable:build-storybook",
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "ci": {

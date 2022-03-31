@@ -98,7 +98,10 @@
         "port": 4400,
         "configDir": "apps/nativestorybookapp/.storybook",
         "browserTarget": "nativestorybookapp:build",
-        "compodoc": false
+        "compodoc": false,
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "ci": {
@@ -113,7 +116,10 @@
         "outputDir": "dist/storybook/nativestorybookapp",
         "configDir": "apps/nativestorybookapp/.storybook",
         "browserTarget": "nativestorybookapp:build",
-        "compodoc": false
+        "compodoc": false,
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "ci": {
