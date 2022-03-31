@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/nativelib-nonbuildable",
+  "sourceRoot": "libs/nativelib-nonbuildable/src",
+  "prefix": "nativestory",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/nativelib-nonbuildable"],
+      "options": {
+        "project": "libs/nativelib-nonbuildable/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/nativelib-nonbuildable/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/nativelib-nonbuildable/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nativelib-nonbuildable"],
+      "options": {
+        "jestConfig": "libs/nativelib-nonbuildable/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/nativelib-nonbuildable/src/**/*.ts",
+          "libs/nativelib-nonbuildable/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -2,6 +2,10 @@
   "version": 2,
   "projects": {
     "design-system": "libs/design-system",
+    "nativelib-buildable": "libs/nativelib-buildable",
+    "nativelib-nonbuildable": "libs/nativelib-nonbuildable",
+    "nativestorybookapp": "apps/nativestorybookapp",
+    "nativestorybookapp-e2e": "apps/nativestorybookapp-e2e",
     "ngapp": "apps/ngapp",
     "ngapp-e2e": "apps/ngapp-e2e",
     "nglib-buildable": "libs/nglib-buildable",
