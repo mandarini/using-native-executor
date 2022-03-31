@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nativestory/design-system": ["libs/design-system/src/index.ts"],
       "@nativestory/nglib-buildable": ["libs/nglib-buildable/src/index.ts"],
       "@nativestory/nglib-nonbuildable": [
         "libs/nglib-nonbuildable/src/index.ts"

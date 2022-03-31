@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "design-system": "libs/design-system",
     "ngapp": "apps/ngapp",
     "ngapp-e2e": "apps/ngapp-e2e",
     "nglib-buildable": "libs/nglib-buildable",
