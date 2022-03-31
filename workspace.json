@@ -3,7 +3,9 @@
   "projects": {
     "design-system": "libs/design-system",
     "nativelib-buildable": "libs/nativelib-buildable",
+    "nativelib-buildable-e2e": "apps/nativelib-buildable-e2e",
     "nativelib-nonbuildable": "libs/nativelib-nonbuildable",
+    "nativelib-nonbuildable-e2e": "apps/nativelib-nonbuildable-e2e",
     "nativestorybookapp": "apps/nativestorybookapp",
     "nativestorybookapp-e2e": "apps/nativestorybookapp-e2e",
     "ngapp": "apps/ngapp",

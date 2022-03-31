@@ -36,6 +36,39 @@
           "libs/nativelib-nonbuildable/src/**/*.html"
         ]
       }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/nativelib-nonbuildable/.storybook"
+        },
+        "projectBuildConfig": "nativelib-nonbuildable"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/nativelib-nonbuildable",
+        "config": {
+          "configFolder": "libs/nativelib-nonbuildable/.storybook"
+        },
+        "projectBuildConfig": "nativelib-nonbuildable"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
     }
   },
   "tags": []

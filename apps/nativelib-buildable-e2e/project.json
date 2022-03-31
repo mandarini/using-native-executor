@@ -1,0 +1,28 @@
+{
+  "root": "apps/nativelib-buildable-e2e",
+  "sourceRoot": "apps/nativelib-buildable-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nativelib-buildable-e2e/cypress.json",
+        "devServerTarget": "nativelib-buildable:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "nativelib-buildable:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nativelib-buildable-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nativelib-buildable"]
+}
