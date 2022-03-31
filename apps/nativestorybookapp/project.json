@@ -19,7 +19,10 @@
           "apps/nativestorybookapp/src/assets"
         ],
         "styles": ["apps/nativestorybookapp/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
       },
       "configurations": {
         "production": {
