@@ -90,14 +90,12 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@storybook/angular:start-storybook",
       "options": {
-        "uiFramework": "@storybook/angular",
         "port": 4400,
-        "config": {
-          "configFolder": "apps/nativestorybookapp/.storybook"
-        },
-        "projectBuildConfig": "nativestorybookapp"
+        "configDir": "apps/nativestorybookapp/.storybook",
+        "browserTarget": "nativestorybookapp:build",
+        "compodoc": false
       },
       "configurations": {
         "ci": {
@@ -106,15 +104,13 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "uiFramework": "@storybook/angular",
-        "outputPath": "dist/storybook/nativestorybookapp",
-        "config": {
-          "configFolder": "apps/nativestorybookapp/.storybook"
-        },
-        "projectBuildConfig": "nativestorybookapp"
+        "outputDir": "dist/storybook/nativestorybookapp",
+        "configDir": "apps/nativestorybookapp/.storybook",
+        "browserTarget": "nativestorybookapp:build",
+        "compodoc": false
       },
       "configurations": {
         "ci": {

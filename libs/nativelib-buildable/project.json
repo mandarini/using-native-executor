@@ -38,14 +38,12 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@storybook/angular:start-storybook",
       "options": {
-        "uiFramework": "@storybook/angular",
         "port": 4400,
-        "config": {
-          "configFolder": "libs/nativelib-buildable/.storybook"
-        },
-        "projectBuildConfig": "nativelib-buildable"
+        "configDir": "libs/nativelib-buildable/.storybook",
+        "browserTarget": "nativelib-buildable:build",
+        "compodoc": false
       },
       "configurations": {
         "ci": {
@@ -54,15 +52,13 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "uiFramework": "@storybook/angular",
-        "outputPath": "dist/storybook/nativelib-buildable",
-        "config": {
-          "configFolder": "libs/nativelib-buildable/.storybook"
-        },
-        "projectBuildConfig": "nativelib-buildable"
+        "outputDir": "dist/storybook/nativelib-buildable",
+        "configDir": "libs/nativelib-buildable/.storybook",
+        "browserTarget": "nativelib-buildable:build",
+        "compodoc": false
       },
       "configurations": {
         "ci": {
