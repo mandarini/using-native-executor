@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nativestory/nglib-buildable": ["libs/nglib-buildable/src/index.ts"],
+      "@nativestory/nglib-nonbuildable": [
+        "libs/nglib-nonbuildable/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

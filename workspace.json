@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "ngapp": "apps/ngapp",
+    "ngapp-e2e": "apps/ngapp-e2e",
+    "nglib-buildable": "libs/nglib-buildable",
+    "nglib-nonbuildable": "libs/nglib-nonbuildable"
+  }
 }

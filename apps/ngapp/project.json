@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/ngapp",
+  "sourceRoot": "apps/ngapp/src",
+  "prefix": "nativestory",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ngapp",
+        "index": "apps/ngapp/src/index.html",
+        "main": "apps/ngapp/src/main.ts",
+        "polyfills": "apps/ngapp/src/polyfills.ts",
+        "tsConfig": "apps/ngapp/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/ngapp/src/favicon.ico", "apps/ngapp/src/assets"],
+        "styles": ["apps/ngapp/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ngapp/src/environments/environment.ts",
+              "with": "apps/ngapp/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ngapp:build:production"
+        },
+        "development": {
+          "browserTarget": "ngapp:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ngapp:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ngapp/src/**/*.ts",
+          "apps/ngapp/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ngapp"],
+      "options": {
+        "jestConfig": "apps/ngapp/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
