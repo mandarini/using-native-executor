@@ -5,6 +5,8 @@
     "ngapp": "apps/ngapp",
     "ngapp-e2e": "apps/ngapp-e2e",
     "nglib-buildable": "libs/nglib-buildable",
-    "nglib-nonbuildable": "libs/nglib-nonbuildable"
+    "nglib-buildable-e2e": "apps/nglib-buildable-e2e",
+    "nglib-nonbuildable": "libs/nglib-nonbuildable",
+    "nglib-nonbuildable-e2e": "apps/nglib-nonbuildable-e2e"
   }
 }

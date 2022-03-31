@@ -36,6 +36,39 @@
           "libs/nglib-buildable/src/**/*.html"
         ]
       }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/nglib-buildable/.storybook"
+        },
+        "projectBuildConfig": "nglib-buildable"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/nglib-buildable",
+        "config": {
+          "configFolder": "libs/nglib-buildable/.storybook"
+        },
+        "projectBuildConfig": "nglib-buildable"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
     }
   },
   "tags": []

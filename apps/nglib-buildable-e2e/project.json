@@ -1,0 +1,28 @@
+{
+  "root": "apps/nglib-buildable-e2e",
+  "sourceRoot": "apps/nglib-buildable-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nglib-buildable-e2e/cypress.json",
+        "devServerTarget": "nglib-buildable:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "nglib-buildable:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nglib-buildable-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nglib-buildable"]
+}
