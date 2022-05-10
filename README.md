@@ -1,94 +1,53 @@
+# Storybook Angular native builder scenarios
 
+This is a project where we will test various scenarios of apps and libs, either using the Nrwl/Nx Storybook `@nrwl/storybook:storybook`/`@nrwl/storybook:build` executors or the "native" Storybook `@storybook/angular:start-storybook`/`@storybook/angular:build-storybook` executors for Angular.
 
-# Nativestory
+## List of projects and description
 
-This project was generated using [Nx](https://nx.dev).
+### nativestorybookapp
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+This is an Angular application with Storybook which uses the "native" Storybook executors for Angular (`@storybook/angular:start-storybook`/`@storybook/angular:build-storybook`).
 
-🔎 **Smart, Fast and Extensible Build System**
+### ngapp
 
-## Adding capabilities to your workspace
+This is an Angular application with Storybook which uses the Nrwl/Nx Storybook executors. (`@nrwl/storybook:storybook`/`@nrwl/storybook:build`).
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### nativelib-buildable
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+This is a buildable Angular application with Storybook which uses the "native" Storybook executors for Angular (`@storybook/angular:start-storybook`/`@storybook/angular:build-storybook`).
 
-Below are our core plugins:
+### nativelib-nonbuildable
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+This is a non-buildable Angular application with Storybook which uses the "native" Storybook executors for Angular (`@storybook/angular:start-storybook`/`@storybook/angular:build-storybook`).
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+### nglib-buildable
 
-## Generate an application
+This is a buildable Angular application with Storybook which uses the Nrwl/Nx Storybook executors. (`@nrwl/storybook:storybook`/`@nrwl/storybook:build`).
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+### nglib-nonbuildable
 
-> You can use any of the plugins above to generate applications as well.
+This is a non-buildable Angular application with Storybook which uses the Nrwl/Nx Storybook executors. (`@nrwl/storybook:storybook`/`@nrwl/storybook:build`).
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+## Features of these apps and libs
 
-## Generate a library
+### Styles
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+All of these apps and libs use an external stylesheet, which is imported via
 
-> You can also use any of the plugins above to generate libraries as well.
+```
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/src/lib"]
+        }
+```
 
-Libraries are shareable across libraries and applications. They can be imported from `@nativestory/mylib`.
+It is only imported ONCE in every `project.json`.
 
-## Development server
+In the cases where the Angular builder allows it, that is when the executor for the `build` target is `@angular-devkit/build-angular:browser`, the `stylePreprocessorOptions` are specified there.
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+In all other cases (even buildable libs, where the executor of the `build` target is the `@nrwl/angular:ng-packagr-lite` which does not allow `stylePreprocessorOptions`), the `stylePreprocessorOptions` are specified in the `build-storybook` target options.
 
-## Code scaffolding
+Then, the `stylePreprocessorOptions` (or the `styles` array, if that's what one uses) are passed in the `storybook` executor as well, since the `browserTarget` is set as the `build` target (in the case of apps) or the `build-storybook` target (in the case of libs).
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+### Assets
 
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+All of these apps use assets (a `.png` image). These are irrelevent to the Storybook executor used, since now Storybook uses `staticDirs` in `main.js` to import assets.
