@@ -1,5 +1,4 @@
 {
-  "root": "apps/nativestorybookapp-e2e",
   "sourceRoot": "apps/nativestorybookapp-e2e/src",
   "projectType": "application",
   "targets": {

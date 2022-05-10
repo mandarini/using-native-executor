@@ -1,5 +1,4 @@
 {
-  "root": "apps/nglib-nonbuildable-e2e",
   "sourceRoot": "apps/nglib-nonbuildable-e2e/src",
   "projectType": "application",
   "targets": {

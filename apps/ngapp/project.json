@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/ngapp",
   "sourceRoot": "apps/ngapp/src",
   "prefix": "nativestory",
   "targets": {
@@ -85,7 +84,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/ngapp"],
       "options": {
-        "jestConfig": "apps/ngapp/jest.config.js",
+        "jestConfig": "apps/ngapp/jest.config.ts",
         "passWithNoTests": true
       }
     },

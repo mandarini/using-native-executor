@@ -1,5 +1,4 @@
 {
-  "root": "apps/nativelib-buildable-e2e",
   "sourceRoot": "apps/nativelib-buildable-e2e/src",
   "projectType": "application",
   "targets": {

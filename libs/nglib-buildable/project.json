@@ -1,6 +1,5 @@
 {
   "projectType": "library",
-  "root": "libs/nglib-buildable",
   "sourceRoot": "libs/nglib-buildable/src",
   "prefix": "nativestory",
   "targets": {
@@ -24,7 +23,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/nglib-buildable"],
       "options": {
-        "jestConfig": "libs/nglib-buildable/jest.config.js",
+        "jestConfig": "libs/nglib-buildable/jest.config.ts",
         "passWithNoTests": true
       }
     },

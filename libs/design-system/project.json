@@ -1,6 +1,5 @@
 {
   "projectType": "library",
-  "root": "libs/design-system",
   "sourceRoot": "libs/design-system/src",
   "prefix": "nativestory",
   "targets": {
@@ -24,7 +23,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/design-system"],
       "options": {
-        "jestConfig": "libs/design-system/jest.config.js",
+        "jestConfig": "libs/design-system/jest.config.ts",
         "passWithNoTests": true
       }
     },

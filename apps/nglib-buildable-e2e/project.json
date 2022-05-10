@@ -1,5 +1,4 @@
 {
-  "root": "apps/nglib-buildable-e2e",
   "sourceRoot": "apps/nglib-buildable-e2e/src",
   "projectType": "application",
   "targets": {

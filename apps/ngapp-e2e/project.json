@@ -1,5 +1,4 @@
 {
-  "root": "apps/ngapp-e2e",
   "sourceRoot": "apps/ngapp-e2e/src",
   "projectType": "application",
   "targets": {

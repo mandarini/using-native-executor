@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/nativestorybookapp",
   "sourceRoot": "apps/nativestorybookapp/src",
   "prefix": "nativestory",
   "targets": {
@@ -88,7 +87,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/nativestorybookapp"],
       "options": {
-        "jestConfig": "apps/nativestorybookapp/jest.config.js",
+        "jestConfig": "apps/nativestorybookapp/jest.config.ts",
         "passWithNoTests": true
       }
     },

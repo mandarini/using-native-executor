@@ -1,6 +1,5 @@
 {
   "projectType": "library",
-  "root": "libs/nativelib-nonbuildable",
   "sourceRoot": "libs/nativelib-nonbuildable/src",
   "prefix": "nativestory",
   "targets": {
@@ -8,7 +7,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/nativelib-nonbuildable"],
       "options": {
-        "jestConfig": "libs/nativelib-nonbuildable/jest.config.js",
+        "jestConfig": "libs/nativelib-nonbuildable/jest.config.ts",
         "passWithNoTests": true
       }
     },
